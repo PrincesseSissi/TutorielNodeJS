@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 //Mongo
 var mongo = require('mongoskin');
 if (process.env.OPENSHIFT_MONGODB_DB) {
-  var db = mongo.db(process.env.OPENSHIFT_MONGODB_DB + 'Tutorial2', {native_parser:true});  
+  var db = mongo.db(process.env.OPENSHIFT_MONGODB_DB + process.env.OPENSHIFT_APP_NAME, {native_parser:true});  
 } else {
   var db = mongo.db("mongodb://localhost:27017/Tutorial2", {native_parser:true});
 }
