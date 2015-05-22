@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 //Mongo
 var mongo = require('mongoskin');
-var db = mongo.db(process.env.OPENSHIFT_MONGODB_DB_URL, {native_parser:true});
+var db = mongo.db((process.env.OPENSHIFT_MONGODB_DB + 'Tutorial2') || "mongodb://localhost:27017/Tutorial2", {native_parser:true});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
